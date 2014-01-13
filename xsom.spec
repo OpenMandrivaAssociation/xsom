@@ -1,4 +1,4 @@
-%_javapackages_macros
+%{?_javapackages_macros:%_javapackages_macros}
 %global checkout 20110809
 
 Name: xsom
@@ -115,3 +115,36 @@ cp -rp target/site/apidocs/* %{buildroot}%{_javadocdir}/%{name}
 %files javadoc
 %{_javadocdir}/*
 %doc license.txt
+
+
+%changelog
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-10.20110809svn
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
+* Fri Feb 22 2013 Juan Hernandez <juan.hernandez@redhat.com> - 0-9.20110809svn
+- Add build dependency on maven-shared (rhbz 914590)
+
+* Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-8.20110809svn
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
+* Wed Feb 06 2013 Java SIG <java-devel@lists.fedoraproject.org> - 0-7.20110809svn
+- Update for https://fedoraproject.org/wiki/Fedora_19_Maven_Rebuild
+- Replace maven BuildRequires with maven-local
+
+* Sun Jul 22 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0-6.20110809svn
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
+* Thu Feb 23 2012 Juan Hernandez <juan.hernandez@redhat.com> 0-5.20110809svn
+- Update the release tag
+
+* Thu Feb 23 2012 Juan Hernandez <juan.hernandez@redhat.com> 0-4.20110809svn
+- Avoid downloading XSD files during the build process
+
+* Wed Feb 22 2012 Juan Hernandez <juan.hernandez@redhat.com> 0-3.20110809svn
+- Put the date tag in the release instead of in the version
+
+* Tue Feb 14 2012 Juan Hernandez <juan.hernandez@redhat.com> 0-2.20110809svn
+- Cleanup of the spec file
+
+* Sat Jan 21 2012 Marek Goldmann <mgoldman@redhat.com> 0-1.20110809svn
+- Initial packaging
