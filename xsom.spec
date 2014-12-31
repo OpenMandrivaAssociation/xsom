@@ -3,8 +3,9 @@
 
 Name: xsom
 Version: 0
-Release: 10.%{checkout}svn.0%{?dist}
+Release: 12.%{checkout}svn.1
 Summary: XML Schema Object Model (XSOM)
+Group:   Development/Java
 
 License: CDDL or GPLv2 with exceptions
 URL: http://xsom.java.net
@@ -22,7 +23,7 @@ Source1: http://docs.oasis-open.org/regrep/v3.0/schema/lcm.xsd
 Patch0: %{name}-%{checkout}svn-pom.patch
 
 BuildRequires: jpackage-utils
-BuildRequires: junit4
+BuildRequires: junit
 BuildRequires: maven-local
 BuildRequires: maven-antrun-plugin
 BuildRequires: maven-plugin-build-helper
@@ -33,7 +34,7 @@ BuildRequires: maven-install-plugin
 BuildRequires: maven-jar-plugin
 BuildRequires: maven-javadoc-plugin
 BuildRequires: maven-surefire-plugin
-BuildRequires: maven-surefire-provider-junit4
+BuildRequires: maven-surefire-provider-junit
 BuildRequires: maven-shared
 BuildRequires: relaxngDatatype
 BuildRequires: relaxngcc
@@ -105,10 +106,7 @@ cp -rp target/site/apidocs/* %{buildroot}%{_javadocdir}/%{name}
 %add_maven_depmap JPP-%{name}.pom %{name}.jar
 
 
-%files
-%{_javadir}/*
-%{_mavenpomdir}/*
-%{_mavendepmapfragdir}/*
+%files -f .mfiles
 %doc license.txt
 
 
