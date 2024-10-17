@@ -8,7 +8,7 @@ Summary: XML Schema Object Model (XSOM)
 Group:   Development/Java
 
 License: CDDL or GPLv2 with exceptions
-URL: http://xsom.java.net
+URL: https://xsom.java.net
 
 # svn export https://svn.java.net/svn/xsom~sources/tags/xsom-20110809 xsom-20110809svn
 # find xsom-20110809svn/ -name '*.class' -delete
